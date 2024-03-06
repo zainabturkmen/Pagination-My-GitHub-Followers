@@ -7,6 +7,7 @@ const title = document.querySelector(".section-title h1");
 const btnContainer = document.querySelector(".btn-container");
 
 let index = 0;
+let pages = [];
 const init  = async () => {
     const followers = await fetchFollowers();
     displayFollowers(paginate(followers)[0]);
