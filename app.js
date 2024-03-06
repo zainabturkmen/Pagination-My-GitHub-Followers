@@ -8,12 +8,18 @@ const btnContainer = document.querySelector(".btn-container");
 
 let index = 0;
 let pages = [];
+
+
+const setupUI = ()=>{
+    displayFollowers(pages[index]);
+    displayButtons(btnContainer, pages, index)
+}
+
 const init  = async () => {
     const followers = await fetchFollowers();
-    displayFollowers(paginate(followers)[0]);
     title.textContent = "pagination"
-    const pages =  paginate(followers);
-    console.log(pages);
+     pages =  paginate(followers);
+     setupUI()
 };
 
 window.addEventListener("load", init);
