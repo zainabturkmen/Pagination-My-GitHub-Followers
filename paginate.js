@@ -1,6 +1,8 @@
 const paginate = (followers) => {
-    const itemsPerPage = 10;
-    const numberOfPages = followers.length;
-}
+    const itemsPerPage = 9;
+    const numberOfPages = Math.ceil(followers.length / itemsPerPage);
+};
+
+
 
 export default paginate
