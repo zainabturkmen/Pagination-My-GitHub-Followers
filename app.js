@@ -24,7 +24,15 @@ const init  = async () => {
 
 
 btnContainer.addEventListener("click", function(e){
+    if(e.target.classList.contains("btn-container")) return
+    if(e.target.classList.contains("page-btn")){
+       index = parseInt(e.target.dataset.index)
+    }
 
+    if(e.target.classList.contains("next-btn")){
+        index++;
+    }
+    setupUI()
 });
 
 window.addEventListener("load", init);
